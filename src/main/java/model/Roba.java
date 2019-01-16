@@ -23,7 +23,7 @@ public class Roba {
     @DatabaseField(columnName = POLJE_TEZINA,canBeNull = false)
     private double tezina;
 
-    @DatabaseField(foreignColumnName = "avion",foreignAutoRefresh = true)
+    @DatabaseField(foreign = true,foreignAutoRefresh = true)
     private Avion avion;
 
     public Roba() {
