@@ -24,11 +24,14 @@ public class Zadatak2DodavanjeVrednosti {
         try {
             connectionSource = new JdbcConnectionSource(Konstante.DATABASE_URL);
 
-            TableUtils.clearTable(connectionSource,Roba.class);
-            TableUtils.clearTable(connectionSource,Avion.class);
+
 
             avionDao = DaoManager.createDao(connectionSource,Avion.class);
             robaDao = DaoManager.createDao(connectionSource,Roba.class);
+
+            TableUtils.clearTable(connectionSource,Roba.class);
+            TableUtils.clearTable(connectionSource,Avion.class);
+            
 
             Avion a1 = new Avion("Avion1",34);
             avionDao.create(a1);

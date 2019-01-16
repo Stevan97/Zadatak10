@@ -20,7 +20,7 @@ public class AvionNit extends Thread {
 
     public static Object sinhr = new Object();
 
-    Avion avion;
+    Avion avion = null;
 
     public AvionNit(Avion avion) {
         this.avion = avion;
@@ -28,7 +28,7 @@ public class AvionNit extends Thread {
 
     protected void provera() {
 
-        System.out.println("Pocinje provera opreme za Avion: " + avion.getId());
+        System.out.println("Pocinje provera opreme za Avion: " + this.avion.getId());
         try {
             sleep(0 +(int)Math.random() * 2000);
         } catch (InterruptedException e) {
@@ -40,7 +40,7 @@ public class AvionNit extends Thread {
         boolean isDozvoljeno;
 
         do {
-            System.out.println("Avion je spreman i ceka dozvolu da poleti " + avion.getId());
+            System.out.println("Avion je spreman i ceka dozvolu da poleti " + this.avion.getId());
             synchronized (sinhr) {
                 if (dozvoljeno) {
                     dozvoljeno = false;
@@ -62,7 +62,7 @@ public class AvionNit extends Thread {
 
     protected void poleti() {
 
-        System.out.println("Avion izlazi na pistu i polece" + avion.getId());
+        System.out.println("Avion izlazi na pistu i polece" + this.avion.getId());
 
 
         try {
