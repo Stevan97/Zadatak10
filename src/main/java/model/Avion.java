@@ -14,10 +14,10 @@ public static final String POLJE_RASPON="raspon";
 @DatabaseField(generatedId = true)
     private int id;
 
-@DatabaseField(columnName = "oznaka",canBeNull = false)
+@DatabaseField(columnName = POLJE_OZNAKA,canBeNull = false)
     private String oznaka;
 
-@DatabaseField(columnName = "raspon",canBeNull = false)
+@DatabaseField(columnName = POLJE_RASPON,canBeNull = false)
     private int raspon;
 
 @ForeignCollectionField(foreignFieldName = "avion")
